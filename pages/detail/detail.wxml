@@ -1,0 +1,30 @@
+<view class="container">
+  <block wx:if="{{errorMsg}}">
+    <text>{{errorMsg}}</text>
+  </block>
+
+  <block wx:else>
+
+  <text class='title'>{{detail.title}}</text>
+  
+  <view class='msg' wx:if="{{detail.source==''}}">
+    <text>来源:未知 {{detail.date}}</text>
+    <text class='read-count'>阅读数:{{detail.readCount}}</text>
+  </view>
+  
+  <view class='msg' wx:else="{{detail.source!=''}}">
+    <text>来源:{{detail.source}} {{detail.date}}</text>
+    <text class='read-count'>阅读数:{{detail.readCount}}</text>
+  </view>
+
+
+  <block wx:for="{{detail.content}}" wx:key="{{id}}">
+    <image wx:if="{{item.type == 'image'}}" src="{{item.src}}"></image>
+    <text wx:elif="{{item.type == 'p'}}" class='text'>{{item.text}}</text>
+    <text wx:elif="{{item.type == 'strong'}}" class='strong'>{{item.text}}</text>
+    <text wx:else>error parse: {{item}}</text>
+  </block>
+
+  </block>
+
+</view>

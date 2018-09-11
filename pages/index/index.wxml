@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class='index'>
+  
+  <view class='header'>
+    <view class='headerPanel'>
+      <block wx:for='{{headerTitleName}}'>
+        <view data-newstype='{{item.newsType}}' class="headerTitle" bindtap='headerTitleClick'>{{item.name}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='content'>
+    
+    <view class='content-top-pic'>
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="50000" duration="1000">
+        <block wx:for="{{topPic}}">
+          <swiper-item>
+            <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class='content-list'>
+      <block wx:for='{{contentNewsList}}' wx:key='{{item.id}}'>
+        <view class='list-item' bindtap='viewDetail' data-newsid='{{item.id}}' data-newstitle='{{item.title}}' data-source='{{item.source}}'>
+          <view class='list-item-content'>
+            <view class='list-item-left'>
+              <image src='{{item.firstImage}}'></image>
+            </view>
+            <view class='list-item-right'>
+              <view class='article-title'>{{item.title}}</view>
+              <view class='article-source' wx:if="{{item.source==''}}">未知</view>
+			  <view class='article-source' wx:else="{{item.source!=''}}">{{item.source}}</view>
+              <view class='article-editTime'>{{item.date}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <loading hidden='{{indexIsHidden}}'>正在加载</loading>
+</view>
