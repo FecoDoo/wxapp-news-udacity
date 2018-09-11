@@ -8,5 +8,6 @@
     "navigationBarBackgroundColor": "#778899",
     "navigationBarTitleText": "新闻",
     "navigationBarTextStyle": "white",
+	"enablePullDownRefresh": true
   }
 }

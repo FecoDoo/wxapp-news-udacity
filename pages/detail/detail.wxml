@@ -8,12 +8,14 @@
   <text class='title'>{{detail.title}}</text>
   
   <view class='msg' wx:if="{{detail.source==''}}">
-    <text>来源:未知 {{detail.date}}</text>
+    <text>来源:未知</text>
+	<text>{{detail.date}}</text>
     <text class='read-count'>阅读数:{{detail.readCount}}</text>
   </view>
   
   <view class='msg' wx:else="{{detail.source!=''}}">
-    <text>来源:{{detail.source}} {{detail.date}}</text>
+    <text>来源:{{detail.source}}</text>
+	<text>{{detail.date}}</text>
     <text class='read-count'>阅读数:{{detail.readCount}}</text>
   </view>
 

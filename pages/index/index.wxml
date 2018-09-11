@@ -14,9 +14,14 @@
     
     <view class='content-top-pic'>
       <swiper class="swiper" indicator-dots="true" autoplay="true" interval="50000" duration="1000">
-        <block wx:for="{{topPic}}">
+        <block wx:for="{{topList}}" >
           <swiper-item>
-            <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+				<image src="{{item.image}}" class="slide-image" mode="aspectFill" bindtap='viewDetail' data-newsid='{{item.id}}'>
+					<!-- 增加了头条新闻的标题等数据 -->
+					<text class='top-title'>{{item.title}}</text>
+					<text class='top-source'>来源:{{item.source}}</text>
+					<text class='top-date'>时间:{{item.date}}</text>
+				</image>
           </swiper-item>
         </block>
       </swiper>

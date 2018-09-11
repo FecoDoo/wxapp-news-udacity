@@ -39,6 +39,7 @@
 .content {
   margin-top: 90rpx;
 }
+
 .content-top-pic {
   height: 380rpx;
   width: 100%;
@@ -48,9 +49,31 @@
   height: 100%;
   width: 100%;
 }
+.top-title {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-size:16px;
+	color: white;
+}
+.top-source {
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-size:14px;
+	color: white;
+}
+.top-date {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 14px;
+	color: white;
+}
 .swiper image {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 /*swiper样式覆盖  */
